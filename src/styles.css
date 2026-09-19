@@ -19,6 +19,7 @@
  */
 
 @theme inline {
+  --font-sans: "DM Sans", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,25 +63,25 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.45rem;
+  --background: oklch(0.985 0.007 250);
+  --foreground: oklch(0.27 0.09 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.63 0.19 250);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.965 0.012 250);
+  --muted-foreground: oklch(0.56 0.06 257);
+  --accent: oklch(0.94 0.035 245);
+  --accent-foreground: oklch(0.48 0.17 250);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
+  --border: oklch(0.9 0.022 250);
+  --input: oklch(0.9 0.022 250);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -95,6 +96,23 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --success: oklch(0.68 0.18 158);
+  --success-soft: oklch(0.95 0.055 160);
+  --warning: oklch(0.75 0.16 75);
+  --warning-soft: oklch(0.97 0.055 85);
+  --danger-soft: oklch(0.96 0.045 20);
+  --violet-soft: oklch(0.95 0.045 300);
+  --panel: oklch(1 0 0);
+}
+
+@theme inline {
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger-soft: var(--danger-soft);
+  --color-violet-soft: var(--violet-soft);
+  --color-panel: var(--panel);
 }
 
 .dark {
@@ -140,5 +158,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
   }
+}
+
+@utility dashboard-panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--color-foreground) 5%, transparent);
 }
